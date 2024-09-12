@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - School Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h2>We'd love to hear from you!</h2>
+    <p>If you have any questions, feedback, or concerns, feel free to reach out to us by filling out the form below.</p>
+    
+    <form id="contactForm" onsubmit="return validateContactForm()">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    
+    <p id="success-message" style="color:green;"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 School Management System</p>
+  </footer>
+
+  <script>
+    function validateContactForm() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill in all the fields.");
+        return false;
+      }
+
+      document.getElementById('success-message').innerText = "Thank you for contacting us! We will get back to you soon.";
+      return false; // Prevent actual form submission for demo purposes
+    }
+  </script>
+</body>
+</html>
